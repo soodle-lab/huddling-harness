@@ -1,0 +1,18 @@
+{
+  "_comment": "규칙 SSOT. 판정 스크립트(verify.mjs)와 판정자가 이 파일만 읽는다. 사람의 승인 없이 수정하지 않는다. 출처: docs/design.md, harness/design/R1-A-story-service.md, harness/design/R5-gates.md",
+  "screens": ["home", "free-content", "member-library", "skill-library", "mission-detail", "submission", "my-learning", "my-assets", "asset-detail", "admin-review"],
+  "frame": { "width": 390, "height": 844 },
+  "minReferences": 5,
+  "specSections": ["목적", "구성 요소", "권한별 차이"],
+  "maxRetries": 2,
+  "design": {
+    "D1": { "desc": "모서리 radius는 0/16/24/9999(+아이콘 30%)만", "allowedRadius": [0, 16, 24, 9999], "iconRadiusPercent": 30 },
+    "D2": { "desc": "drop shadow 0개 (세그먼트 컨트롤 활성 칸 1곳만 예외)", "maxShadows": 0, "exceptionRole": "segmented-control-active", "exceptionMax": 1 },
+    "D3": { "desc": "폰트는 Pretendard, 굵기는 300/400/600/700만", "fontFamily": "Pretendard", "allowedWeights": [300, 400, 600, 700] },
+    "D4": { "desc": "액센트는 상업 신호 요소에만, 페이지당 2개 이하", "accent": "#0066ff", "allowedRoles": ["badge-popular", "savings-callout"], "maxCount": 2 }
+  },
+  "service": {
+    "S1": { "desc": "판매 신청은 판매 승인 회원(seller)만 (R1-A). 판매 신청 선택지가 있으면 seller 전용 표시가 있어야 한다", "source": "harness/design/R1-A-story-service.md" }
+  },
+  "outOfScope": ["개인정보, 고객정보, 회사기밀, 타인의 저작물은 판매 자산에 넣을 수 없다 (이번 하네스 게이트에는 없음)"]
+}

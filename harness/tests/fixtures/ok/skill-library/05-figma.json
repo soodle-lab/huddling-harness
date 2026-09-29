@@ -1,0 +1,5 @@
+{"frames":[{"name":"skill-library","width":390,"height":844}],
+ "nodes":[
+ {"name":"button-primary","cornerRadius":9999,"fontFamily":"Pretendard","fontWeight":600},
+ {"name":"badge-popular","cornerRadius":9999,"fills":["#0066FF"],"role":"badge-popular","fontFamily":"Pretendard","fontWeight":600}
+ ],"saleRequest":{"present":false}}
